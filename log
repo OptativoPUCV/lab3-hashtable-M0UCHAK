@@ -2,3 +2,21 @@ Thu 07 Sep 2023 12:17:47 AM UTC:
  tests:  0|6
 total_score: 0/70
 78dbf54
+Thu 07 Sep 2023 12:23:56 AM UTC: 
+ hashmap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:30: error: too few arguments to function ‘calloc’
+   56 |   HashMap* map = (HashMap *) calloc(sizeof(HashMap));
+      |                              ^~~~~~
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:543:14: note: declared here
+  543 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+In file included from test.c:4:
+hashmap.c:58:6: error: expected expression before ‘HashMap’
+   58 |   if(HashMap == NULL) return NULL;
+      |      ^~~~~~~
+Compilation failed
+5bb7b37
