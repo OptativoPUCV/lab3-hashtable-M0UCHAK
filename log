@@ -306,3 +306,21 @@ Thu 07 Sep 2023 05:32:59 AM UTC:
  tests:  11|2
 total_score: 50/70
 2eea246
+Thu 07 Sep 2023 05:40:30 AM UTC: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:118:41: error: expected ‘)’ before ‘return’
+  118 |   if((map == NULL) || (map -> size == 0) return NULL;
+      |     ~                                   ^~~~~~~
+      |                                         )
+hashmap.c:127:1: error: expected expression before ‘}’ token
+  127 | }
+      | ^
+hashmap.c:127:1: error: control reaches end of non-void function [-Werror=return-type]
+  127 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+508ad53
