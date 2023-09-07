@@ -33,21 +33,20 @@ long hash( char * key, long capacity) {
 }
 
 int is_equal(void* key1, void* key2){
-    if(key1==NULL || key2==NULL) return 0;
+    if((key1 == NULL) || (key2 == NULL)) return 0;
     if(strcmp((char*)key1,(char*)key2) == 0) return 1;
     return 0;
 }
 
 void insertMap(HashMap *map, char * key, void * value){
   
-  if (map == NULL || key == NULL || value == NULL) return; 
+  if ((map == NULL) || (key == NULL) || (value == NULL)) return; 
 
   long index = hash(key, map->capacity);
 
-  while (map -> buckets[index] != NULL && map -> buckets[index]->key != NULL && strcmp(map->buckets[index]->key, key) != 0) index = (index + 1) % map -> capacity;
-    
+  while ((map -> buckets[index] != NULL) && (map -> buckets[index]->key != NULL) && (strcmp(map->buckets[index]->key, key) != 0)) index = (index + 1) % map -> capacity;
 
-  if (map->buckets[index] == NULL || map->buckets[index]->key == NULL){
+  if (map -> buckets[index] == NULL || map->buckets[index]->key == NULL){
     Pair* pair = (Pair*)malloc(sizeof(Pair));
     if (pair == NULL) return; 
     
@@ -87,15 +86,22 @@ HashMap * createMap(long capacity){
   return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key){    
 
 
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
 
+  if((map == NULL) || (key == NULL)) return NULL;
+  long index = hash(key, map->capacity);
 
-    return NULL;
+  while ((map -> buckets[index] != NULL) && ((map -> buckets[index] -> key == NULL) || (strcmp(map -> buckets[index] -> key, key) != 0))) index = (index + 1) % map -> capacity;
+    
+   if ((map -> buckets[index] != NULL) && (map -> buckets[index]->key != NULL) && (strcmp(map -> buckets[index] -> key, key) == 0)){
+        map -> current = index;
+        return map -> buckets[index];
+    } else return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
