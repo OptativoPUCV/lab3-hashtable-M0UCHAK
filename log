@@ -116,3 +116,20 @@ hashmap.c:89:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 ae12df0
+Thu 07 Sep 2023 05:28:38 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:91:45: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   91 |   if((map == NULL) || (key == NULL)) return NULL;
+      |                                             ^~~~
+hashmap.c:89:6: note: declared here
+   89 | void eraseMap(HashMap * map,  char * key){
+      |      ^~~~~~~~
+hashmap.c:95:30: error: expected expression before ‘%’ token
+   95 |         index = (index + 1); % map->capacity;
+      |                              ^
+cc1: all warnings being treated as errors
+Compilation failed
+f1865ab
