@@ -94,10 +94,10 @@ void eraseMap(HashMap * map,  char * key){
   while ((map -> buckets[index] != NULL) && ((map -> buckets[index] -> key == NULL) || (strcmp(map -> buckets[index] -> key, key) != 0))) 
     index = (index + 1) % map -> capacity;
 
-  if ((map -> buckets[index] != NULL) && (map -> buckets[index] -> key != NULL) && (strcmp(map -> buckets[index] -> key, key) == 0)) {
+  if ((map -> buckets[index] != NULL) && (map -> buckets[index] -> key != NULL) && (strcmp(map -> buckets[index] -> key, key) == 0)){
         map -> buckets[index] -> key = NULL;
         map -> size--;
-
+  }
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
