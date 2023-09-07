@@ -336,3 +336,14 @@ Thu 07 Sep 2023 05:44:49 AM UTC:
  tests:  16|1
 total_score: 60/70
 6c0a322
+Thu 07 Sep 2023 06:00:32 AM UTC: 
+ hashmap.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:65:10: error: unused variable ‘old_buckets’ [-Werror=unused-variable]
+   65 |   Pair** old_buckets = map -> buckets;
+      |          ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+54d33a0
