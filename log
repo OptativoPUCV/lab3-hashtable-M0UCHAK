@@ -75,3 +75,18 @@ hashmap.c:26:29: note: expected ‘long int’ but argument is of type ‘char *
 cc1: all warnings being treated as errors
 Compilation failed
 8840858
+Thu 07 Sep 2023 01:40:49 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:46:28: error: incompatible type for argument 1 of ‘hash’
+   46 |         long index = (hash(*map, *key) + i) % map -> capacity;
+      |                            ^~~~
+      |                            |
+      |                            HashMap {aka struct HashMap}
+hashmap.c:26:19: note: expected ‘char *’ but argument is of type ‘HashMap’ {aka ‘struct HashMap’}
+   26 | long hash( char * key, long capacity) {
+      |            ~~~~~~~^~~
+Compilation failed
+e0ecb73
