@@ -35,3 +35,13 @@ Thu 07 Sep 2023 12:24:25 AM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 7e00acd
+Thu 07 Sep 2023 12:32:01 AM UTC: 
+ hashmap.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:71:3: error: expected expression before ‘}’ token
+   71 |   }
+      |   ^
+Compilation failed
+456ac1f
