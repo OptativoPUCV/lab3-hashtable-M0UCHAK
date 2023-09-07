@@ -115,7 +115,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map){
 
-  if((map == NULL) || (map -> size == 0) return NULL;
+  if((map == NULL) || (map -> size == 0)) return NULL;
   long index = 0;
 
   while ((index < map -> capacity) && ((map -> buckets[index] == NULL) || (map -> buckets[index] -> key == NULL))) index++;
