@@ -90,3 +90,9 @@ hashmap.c:26:19: note: expected ‘char *’ but argument is of type ‘HashMap�
       |            ~~~~~~~^~~
 Compilation failed
 e0ecb73
+Thu 07 Sep 2023 01:49:21 AM UTC: 
+ hashmap.c | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+ tests:  5|4
+total_score: 30/70
+af15926

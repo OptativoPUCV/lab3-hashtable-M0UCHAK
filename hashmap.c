@@ -42,21 +42,21 @@ void insertMap(HashMap *map, char * key, void * value){
   
   if (map == NULL || key == NULL || value == NULL) return; 
 
-  for (long i = 0; i < map -> capacity; i++){
-        long index = (hash(*map, *key) + i) % map -> capacity;
-        Pair *currentPair = map -> buckets[index];
-        if (currentPair == NULL){
-            Pair *newPair = (Pair *)malloc(sizeof(Pair));
-            
-          if (newPair == NULL) return;
-            newPair -> key = strdup(key);
-            newPair -> value = value;
-            map -> buckets[index] = newPair;
-            map -> size++;
-            map -> current = index;
-            return;
-        } else if (strcmp(currentPair->key, key) == 0) return;
-    }
+  long index = hash(key, map->capacity);
+
+  while (map -> buckets[index] != NULL && map -> buckets[index]->key != NULL && strcmp(map->buckets[index]->key, key) != 0) index = (index + 1) % map -> capacity;
+    
+
+  if (map->buckets[index] == NULL || map->buckets[index]->key == NULL){
+    Pair* pair = (Pair*)malloc(sizeof(Pair));
+    if (pair == NULL) return; 
+    
+        pair -> key = strdup(key);
+        pair -> value = value;
+        map -> buckets[index] = pair;
+        map -> size++;
+  }
+  map -> current = index;
 }
 
 void enlarge(HashMap * map) {
